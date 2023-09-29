@@ -51,7 +51,8 @@ const RamperScreen = () => {
     const signInResult = await signInWithProvider({ provider })
     setUser(signInResult.user)
     console.log(signInResult)
-    window.dispatchEvent(new CustomEvent('ramper:sign-in', { detail: signInResult }))
+    // @ts-ignore
+    Unity.call(JSON.stringify(signInResult))
   }
 
   return (
