@@ -24,9 +24,12 @@ const RamperScreen = () => {
 
   useEffect(() => {
     // @ts-ignore
-    Unity.call('TEST UNITY')
-    // @ts-ignore
-    Unity.call(JSON.stringify({ type: "CALL FOR BAO" }));
+    if(Unity) {
+      // @ts-ignore
+      Unity.call('TEST UNITY')
+      // @ts-ignore
+      Unity.call(JSON.stringify({ type: "CALL FOR BAO" }));
+    }
   }, [])
 
   useEffect(() => {
