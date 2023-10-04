@@ -23,6 +23,13 @@ const RamperScreen = () => {
   const [user, setUser] = useState<User | undefined>(undefined)
 
   useEffect(() => {
+    // @ts-ignore
+    Unity.call('TEST UNITY')
+    // @ts-ignore
+    Unity.call(JSON.stringify({ type: "CALL FOR BAO" }));
+  }, [])
+
+  useEffect(() => {
     init({
       appName: 'Tomochain Test App',
       authProviders: [
